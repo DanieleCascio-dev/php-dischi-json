@@ -12,10 +12,15 @@
     />
     <title>Document</title>
 
-    <!-- Axiso -->
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <!-- Vue -->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <!-- Axios -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.2/axios.min.js"
+      integrity="sha512-b94Z6431JyXY14iSXwgzeZurHHRNkLt9d6bAHt7BZT38eqV+GyngIi/tVye4jBKPYQ2lBdRs0glww4fmpuLRwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
   </head>
   <body>
     <div id="app">
@@ -27,12 +32,13 @@
       <!-- MAIN -->
       <main class="mt-5 p-5">
         <div class="row g-1">
-          <div class="col-4">
-            <div class="card">
-              <img />
+          <div v-for="dischi in dischiList" :key="dischi.title" class="col-4">
+            <div class="card text-center w-75">
+              <img :src="dischi.poster" />
               <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick</p>
+                <h5 class="card-title">{{ dischi.title }}</h5>
+                <p class="card-text">{{ dischi.author }}</p>
+                <p class="card-text">{{ dischi.year }}</p>
               </div>
             </div>
           </div>

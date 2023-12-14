@@ -4,6 +4,8 @@ createApp({
   created() {
     axios.get(this.apiUrl).then((resp) => {
       console.log(resp);
+      this.dischiList = resp.data;
+      console.log(this.dischiList);
     });
   },
   data() {

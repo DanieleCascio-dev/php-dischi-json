@@ -1,10 +1,11 @@
 <?php 
 /* Prelevo dati dal file */
 $string = file_get_contents("dischi.json");
+// var_dump($string);
 
 /* trasformo stringa in array */
 $dischi = json_decode($string, true);
-var_dump($dischi);
+// var_dump($dischi);
 
 /* Operazioni sui dati */
 
@@ -13,5 +14,5 @@ var_dump($dischi);
 $json = json_encode($dischi);
 
 /* Invio dati al client */
-header("Content-Type: application/json");
+// header("Content-Type: application/json");
 echo $json;
