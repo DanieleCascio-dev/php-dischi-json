@@ -4,5 +4,21 @@
   box-sizing: border-box;
 }
 body {
-  background-color: aqua;
+  background-color: #1d2d3c;
+}
+
+header {
+  background-color: #06131f;
+}
+
+.card-bg-dark {
+  background-color: #112030;
+}
+
+.text-white {
+  color: #fff;
+}
+
+.spotify-color {
+  color: #18d860;
 }
