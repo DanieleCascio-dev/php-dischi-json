@@ -45,15 +45,26 @@
       <!-- MAIN -->
       <main class="mt-5 p-5">
         <div class="row g-3">
-          <div v-for="dischi in dischiList" :key="dischi.title" class="col-4">
-            <div class="card text-center w-75 h-100 card-bg-dark text-white">
-              <img :src="dischi.poster" />
+          <div
+            v-for="(dischi,index) in dischiList"
+            :key="dischi.title"
+            class="col-4"
+          >
+            <div
+              class="card text-center w-75 h-100 card-bg-dark text-white p-4"
+            >
+              <img :src="dischi.poster" @click="getInfo(index)" />
               <div class="card-body">
                 <h5 class="card-title">{{ dischi.title }}</h5>
                 <p class="card-text">{{ dischi.author }}</p>
                 <p class="card-text fw-bold">{{ dischi.year }}</p>
               </div>
             </div>
+          </div>
+          <div class="dialog" v-show="showDisk">
+            <img :src="selectedDisk.poster" alt="" />
+            <p>{{selectedDisk.title}}</p>
+            <button @click="showDisk = false">Esci</button>
           </div>
         </div>
       </main>
